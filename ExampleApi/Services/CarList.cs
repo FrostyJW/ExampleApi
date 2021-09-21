@@ -48,4 +48,12 @@ namespace ExampleApi.Services
         public string Manufacturer { get; set; }
         public int WheelCount { get; set; }
     }
+
+    public class UpdateCar
+    {
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public string Manufacturer { get; set; }
+        public int WheelCount { get; set; }
+    }
 }

@@ -86,5 +86,24 @@ namespace ExampleApi.Controllers
 
             return result;
         }
+
+        [HttpPost("[action]")]
+        public ApiResponse Update([FromBody] UpdateCar model)
+        {
+
+            var carRecord = CarList.Cars.FirstOrDefault(x => x.Id == model.Id);
+
+            carRecord.Manufacturer = model.Manufacturer;
+            carRecord.Name = model.Name;
+            carRecord.WheelCount = model.WheelCount;
+
+            var result = new ApiResponse()
+            {
+                Status = (int)HttpStatusCode.OK,
+                Message = "წარმატებით შეინახა ",
+            };
+
+            return result;
+        }
     }
 }
